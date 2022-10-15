@@ -4,11 +4,20 @@
 format: jb-book
 root: intro
 parts:
+  - caption: Pre-requisites
+    chapters:
+    - file: setup
   - caption: Generating Data
     chapters:
-    - file: Random module
-    - file: Numpy Random
-    - file: Using Scikitlearn
+    - file: "generating-data/Random module"
+      sections:
+        - file: "generating-data/Random Sampling"
+        - file: "generating-data/Random Strings"
+    - file: "generating-data/Numpy Random"
+    - file: "generating-data/Using Scikitlearn"
+  - caption: Reading Files
+    chapters:
+    - file: "reading-files/Pandas File Readers"
   # - file: markdown
   # - file: notebooks
   # - file: markdown-notebooks

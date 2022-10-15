@@ -1,6 +1,6 @@
 # Introduction
 
-This Jupyter Book is all about using Python to obtain data for use in your machine learning projects. This was especially made for those starting out as Data Engineers or ML Engineers who want to learn how to generate test data, and where to find data, extract, and prepare them for analysis and modeling.
+This Jupyter Book is all about using Python to obtain data for use in your data science or machine learning projects. This was especially made for those starting out as Data Engineers or ML Engineers who want to learn how to generate test data, and where to find data, extract, and prepare them for analysis and modeling.
 
 The book starts out with the simplest way to obtain data - by generating them using some random function. Most of the time, we would have some idea about what to do with the data we'll have, but we just don't have the data yet. Sometimes reading _real-life_ data is too time-consuming if we just want to test out a theory or visualise a pattern. Learning how to generate data using only a few lines of code can be a major time-saving skill and is one that I would recommend a Data Engineer to have in their toolbox.
 
