@@ -5,56 +5,56 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Using the numpy library &#8212; Getting Data for Machine Learning</title>
+    <title>Using the numpy library &#8212; Generating and Extracting Data with Python</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Using the scikit-learn library" href="Using%20Scikitlearn.html" />
-    <link rel="prev" title="Using the random module" href="Random%20module.html" />
+    <link rel="prev" title="Random strings" href="Random%20Strings.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -74,27 +74,39 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Getting Data for Machine Learning</h1>
+      <h1 class="site-logo" id="site-title">Generating and Extracting Data with Python</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
+  <a class="reference internal" href="../intro.html">
    Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Pre-requisites
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../setup.html">
+   Setting up your Python environment
   </a>
  </li>
 </ul>
@@ -104,10 +116,27 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="Random%20module.html">
    Using the random module
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Random%20Sampling.html">
+     Random sampling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Random%20Strings.html">
+     Random strings
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
@@ -117,6 +146,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Using%20Scikitlearn.html">
    Using the scikit-learn library
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reading Files
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reading-files/Pandas%20File%20Readers.html">
+   Pandas File Readers
   </a>
  </li>
 </ul>
@@ -160,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Numpy Random.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/generating-data/Numpy Random.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -180,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNumpy Random.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgenerating-data/Numpy Random.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -201,10 +242,10 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Numpy Random.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/generating-data/Numpy Random.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
+                    src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
@@ -298,7 +339,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[20, 17, 43, 73, 21, 44, 91, 85, 52, 20]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 4, 74, 90, 57, 32, 35, 46, 80, 95]
 </pre></div>
 </div>
 </div>
@@ -319,7 +360,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.35165858,  0.0492896 ,  0.23418265, -0.93160745, -0.54246778])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.3547577 ,  0.75760898, -0.87585406,  0.28555026, -0.34940374])
 </pre></div>
 </div>
 </div>
@@ -331,7 +372,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.28919241,  1.21505251,  0.51386939,  0.05304055, -0.40525455])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.12593429, -0.1631145 ,  1.24165682, -0.08268092,  1.4330829 ])
 </pre></div>
 </div>
 </div>
@@ -374,7 +415,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Random n-dimensional arrays<a class="headerlink" href="#random-n-dimensional-arrays" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="random-numpy-arrays-with-a-uniform-distribution">
 <h3>Random numpy arrays with a uniform distribution<a class="headerlink" href="#random-numpy-arrays-with-a-uniform-distribution" title="Permalink to this headline">¶</a></h3>
-<p>Numpy operates on arrays of any shape, so we can expect that its <code class="docutils literal notranslate"><span class="pre">random</span></code> module can also generate arrays of any given shape. The <code class="docutils literal notranslate"><span class="pre">np.rand()</span></code> function accepts any number of paramaters representing the shape of a multi-dimensional array. For example, we can generate a 2-dimensional array with random values by providing 2 parameters: the size of the 1st dimension, and then size of the 2nd dimension. Note that <code class="docutils literal notranslate"><span class="pre">np.rand()</span></code> generates numbers from the standard uniform distribution (numbers between 0 and 1).</p>
+<p>Numpy operates on arrays of any shape, so we can expect that its <code class="docutils literal notranslate"><span class="pre">random</span></code> module can also generate arrays of any given shape. The <code class="docutils literal notranslate"><span class="pre">np.rand()</span></code> function accepts any number of parameters representing the shape of a multi-dimensional array. For example, we can generate a 2-dimensional array with random values by providing 2 parameters: the size of the 1st dimension, and then size of the 2nd dimension. Note that <code class="docutils literal notranslate"><span class="pre">np.rand()</span></code> generates numbers from the standard uniform distribution (numbers between 0 and 1).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
@@ -382,8 +423,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.64075503, 0.51179645, 0.65822415],
-       [0.23977964, 0.64126682, 0.27639608]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.78256733, 0.66596987, 0.63084097],
+       [0.95023572, 0.82580178, 0.79041558]])
 </pre></div>
 </div>
 </div>
@@ -396,13 +437,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.74617597, 0.65924864, 0.70480444, 0.97994566],
-        [0.91501635, 0.9794881 , 0.86432557, 0.76328635],
-        [0.28278647, 0.8032145 , 0.09485685, 0.87707308]],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.10018053, 0.48311475, 0.20444325, 0.74305773],
+        [0.66097182, 0.33444742, 0.46479434, 0.62770008],
+        [0.00211702, 0.10030268, 0.82633628, 0.91458606]],
 
-       [[0.97732726, 0.0756557 , 0.37101678, 0.12975523],
-        [0.90379745, 0.68763194, 0.98878449, 0.03960762],
-        [0.38192891, 0.31814367, 0.98989468, 0.1356009 ]]])
+       [[0.91055989, 0.28460354, 0.28966579, 0.85894546],
+        [0.83913847, 0.88538952, 0.82179712, 0.70011575],
+        [0.8745724 , 0.68607236, 0.76411051, 0.52641683]]])
 </pre></div>
 </div>
 </div>
@@ -415,36 +456,60 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[[0.39764849, 0.88388896, 0.61982415, 0.87023036, 0.31435046],
-         [0.44840104, 0.09317201, 0.37079845, 0.87317667, 0.61947807],
-         [0.51575346, 0.48880308, 0.57994104, 0.32773422, 0.84341877],
-         [0.53807527, 0.54534162, 0.03917442, 0.88066334, 0.53401693]],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[[4.39728218e-01, 6.81714585e-02, 3.63685632e-01,
+          1.73465430e-01, 3.31392568e-01],
+         [7.62389052e-01, 7.46403921e-01, 8.08893832e-01,
+          2.64610039e-01, 8.02545976e-01],
+         [6.51192177e-02, 8.05140588e-02, 2.64364131e-01,
+          6.01561707e-01, 3.05559011e-01],
+         [1.71400588e-01, 5.23408126e-01, 2.94170359e-01,
+          2.58420830e-01, 3.34847307e-01]],
 
-        [[0.08618928, 0.37407837, 0.65065369, 0.48908795, 0.95946049],
-         [0.64149076, 0.15825508, 0.38443641, 0.89556594, 0.88866757],
-         [0.38645383, 0.55078277, 0.4115834 , 0.68962348, 0.65112702],
-         [0.58675113, 0.2983001 , 0.45947048, 0.5509956 , 0.18156461]],
+        [[9.32957768e-01, 6.64108265e-01, 9.97870234e-01,
+          5.48709756e-02, 2.05880462e-01],
+         [8.26114945e-01, 4.77620689e-01, 6.99764253e-01,
+          6.22693185e-01, 8.32489893e-01],
+         [4.34334539e-01, 3.70103251e-01, 7.92470151e-01,
+          3.97743585e-01, 8.08249075e-01],
+         [4.48806315e-01, 9.24352132e-01, 2.62913546e-01,
+          4.63069599e-01, 7.46106676e-01]],
 
-        [[0.24783592, 0.68608062, 0.75990847, 0.07424812, 0.71319238],
-         [0.83378344, 0.14415229, 0.57360427, 0.07367473, 0.75040573],
-         [0.36068248, 0.18546219, 0.36113261, 0.72762579, 0.57353233],
-         [0.35047658, 0.39181883, 0.02334272, 0.21271452, 0.28341408]]],
+        [[9.48963250e-01, 4.85455680e-01, 3.70933007e-01,
+          6.87090579e-01, 1.65995723e-01],
+         [6.78604659e-01, 2.93027906e-01, 7.06606837e-02,
+          1.53527295e-01, 3.82786037e-01],
+         [7.89366828e-01, 2.91269430e-04, 2.74789722e-02,
+          6.56570674e-01, 6.05654313e-01],
+         [6.63014679e-01, 4.33346891e-01, 1.56866240e-01,
+          2.57037110e-01, 9.91205736e-01]]],
 
 
-       [[[0.17195742, 0.11371567, 0.713583  , 0.61775402, 0.06322468],
-         [0.11647523, 0.64388974, 0.45494117, 0.9919112 , 0.79044432],
-         [0.06087761, 0.45235088, 0.0451304 , 0.18705116, 0.87055699],
-         [0.65809732, 0.17126801, 0.37512446, 0.63159643, 0.41760951]],
+       [[[3.52365615e-01, 2.05995701e-01, 4.77944940e-01,
+          1.49893942e-01, 4.00400801e-01],
+         [2.89476524e-02, 6.83789880e-02, 7.26673872e-01,
+          1.26646804e-02, 8.06607734e-01],
+         [7.61889846e-01, 5.97918778e-01, 3.16354724e-01,
+          9.14989878e-01, 5.75292311e-01],
+         [6.78568405e-01, 3.37172607e-01, 6.58893205e-01,
+          3.58429814e-01, 9.41435433e-01]],
 
-        [[0.85997143, 0.14621805, 0.12240098, 0.0971599 , 0.28823863],
-         [0.74941538, 0.01800812, 0.86472081, 0.34486014, 0.08939419],
-         [0.6552927 , 0.49997617, 0.71415232, 0.29199377, 0.14864145],
-         [0.8258549 , 0.15517594, 0.83722657, 0.62344127, 0.8163226 ]],
+        [[8.76187298e-01, 2.14238567e-01, 3.81911423e-01,
+          7.80074962e-01, 7.64660368e-01],
+         [7.36184819e-01, 1.61875622e-01, 3.56934978e-01,
+          1.10252455e-02, 7.31190309e-01],
+         [1.33872670e-01, 7.54485499e-01, 1.10970980e-01,
+          2.73665596e-01, 3.15975309e-01],
+         [8.06795361e-01, 1.88548813e-01, 8.08481472e-01,
+          4.95769802e-01, 7.94118807e-01]],
 
-        [[0.55714981, 0.53801348, 0.29596706, 0.39378634, 0.12096424],
-         [0.83373056, 0.37450312, 0.90238706, 0.81331976, 0.84096837],
-         [0.18676562, 0.48215075, 0.3679391 , 0.34819134, 0.37099776],
-         [0.05031666, 0.9298281 , 0.44279778, 0.20705231, 0.44056855]]]])
+        [[1.76695342e-02, 2.83043045e-02, 2.98035885e-01,
+          3.77628664e-02, 6.84294814e-01],
+         [9.60215255e-01, 1.89209700e-01, 3.37747127e-01,
+          9.53157834e-01, 5.72804328e-01],
+         [7.25736522e-01, 9.00880849e-01, 3.97499758e-01,
+          2.66902872e-01, 3.14820849e-01],
+         [9.31249096e-01, 4.15995094e-01, 6.11641348e-01,
+          1.58363568e-01, 4.12470962e-01]]]])
 </pre></div>
 </div>
 </div>
@@ -458,7 +523,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Numpy Random_21_0.png" src="_images/Numpy Random_21_0.png" />
+<img alt="../_images/Numpy Random_21_0.png" src="../_images/Numpy Random_21_0.png" />
 </div>
 </div>
 <p>To generate a numpy array of integers, we use the <code class="docutils literal notranslate"><span class="pre">np.randint()</span></code> function, which requires the minimum value, and then optionally the max value and array size. If the size is not specified, the function will return only one number. The following example generates a numpy array of 10 integers whose values range from 1 to 100.</p>
@@ -470,7 +535,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Numpy Random_23_0.png" src="_images/Numpy Random_23_0.png" />
+<img alt="../_images/Numpy Random_23_0.png" src="../_images/Numpy Random_23_0.png" />
 </div>
 </div>
 </div>
@@ -493,7 +558,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Numpy Random_28_0.png" src="_images/Numpy Random_28_0.png" />
+<img alt="../_images/Numpy Random_28_0.png" src="../_images/Numpy Random_28_0.png" />
 </div>
 </div>
 </div>
@@ -513,7 +578,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "computervision",
-            path: "./."
+            path: "./generating-data"
         },
         predefinedOutput: true
     }
@@ -525,11 +590,11 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Random%20module.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Random%20Strings.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Using the random module</p>
+            <p class="prev-next-title">Random strings</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Using%20Scikitlearn.html" title="next page">
@@ -557,7 +622,7 @@ const thebe_selector_output = ".output, .cell_output"
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

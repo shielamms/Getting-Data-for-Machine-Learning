@@ -5,54 +5,55 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Using the scikit-learn library &#8212; Getting Data for Machine Learning</title>
+    <title>Using the scikit-learn library &#8212; Generating and Extracting Data with Python</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pandas File Readers" href="../reading-files/Pandas%20File%20Readers.html" />
     <link rel="prev" title="Using the numpy library" href="Numpy%20Random.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -73,27 +74,39 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Getting Data for Machine Learning</h1>
+      <h1 class="site-logo" id="site-title">Generating and Extracting Data with Python</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
+  <a class="reference internal" href="../intro.html">
    Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Pre-requisites
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../setup.html">
+   Setting up your Python environment
   </a>
  </li>
 </ul>
@@ -103,10 +116,27 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="Random%20module.html">
    Using the random module
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Random%20Sampling.html">
+     Random sampling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Random%20Strings.html">
+     Random strings
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Numpy%20Random.html">
@@ -116,6 +146,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Using the scikit-learn library
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reading Files
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../reading-files/Pandas%20File%20Readers.html">
+   Pandas File Readers
   </a>
  </li>
 </ul>
@@ -159,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Using Scikitlearn.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/generating-data/Using Scikitlearn.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -179,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUsing Scikitlearn.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgenerating-data/Using Scikitlearn.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -200,10 +242,10 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Using Scikitlearn.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/generating-data/Using Scikitlearn.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
+                    src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
@@ -390,33 +432,33 @@ Type of y: &lt;class &#39;numpy.ndarray&#39;&gt;
   <tbody>
     <tr>
       <th>0</th>
-      <td>7.882323</td>
-      <td>-0.598725</td>
-      <td>0</td>
+      <td>1.754258</td>
+      <td>-8.309663</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-7.190066</td>
-      <td>-7.199965</td>
+      <td>-8.865031</td>
+      <td>5.164420</td>
       <td>1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-7.072600</td>
-      <td>-8.465123</td>
-      <td>1</td>
+      <td>-1.141462</td>
+      <td>0.090764</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>6.710638</td>
-      <td>0.034614</td>
-      <td>0</td>
+      <td>-7.748770</td>
+      <td>6.245700</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>6.883845</td>
-      <td>-0.177592</td>
-      <td>0</td>
+      <td>-6.133729</td>
+      <td>7.027466</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>...</th>
@@ -426,33 +468,33 @@ Type of y: &lt;class &#39;numpy.ndarray&#39;&gt;
     </tr>
     <tr>
       <th>9995</th>
-      <td>6.728867</td>
-      <td>-0.087085</td>
-      <td>0</td>
+      <td>0.992074</td>
+      <td>-8.043875</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>9996</th>
-      <td>-1.291145</td>
-      <td>4.635029</td>
+      <td>2.252391</td>
+      <td>-8.540260</td>
       <td>2</td>
     </tr>
     <tr>
       <th>9997</th>
-      <td>8.171969</td>
-      <td>-1.189923</td>
-      <td>0</td>
+      <td>1.482460</td>
+      <td>-8.961066</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>9998</th>
-      <td>-9.184662</td>
-      <td>3.846822</td>
-      <td>3</td>
+      <td>-0.199096</td>
+      <td>-3.018672</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>9999</th>
-      <td>-7.269643</td>
-      <td>-6.403735</td>
-      <td>1</td>
+      <td>-3.120199</td>
+      <td>4.527252</td>
+      <td>3</td>
     </tr>
   </tbody>
 </table>
@@ -467,7 +509,7 @@ Type of y: &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 1, 0, 3])
 </pre></div>
 </div>
 </div>
@@ -480,13 +522,13 @@ Type of y: &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1494cc940&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x14d4b6940&gt;
 </pre></div>
 </div>
-<img alt="_images/Using Scikitlearn_16_1.png" src="_images/Using Scikitlearn_16_1.png" />
+<img alt="../_images/Using Scikitlearn_16_1.png" src="../_images/Using Scikitlearn_16_1.png" />
 </div>
 </div>
-<p>We can see that the clusters are easily linearly separable, so the <code class="docutils literal notranslate"><span class="pre">make_blobs()</span></code> function is suitable for testing linear models.</p>
+<p>We can see that the clusters are easily linearly separable. The <code class="docutils literal notranslate"><span class="pre">make_blobs()</span></code> function is suitable for testing linear models.</p>
 <p>We can easily add more features into the dataset by specifying the number in the <code class="docutils literal notranslate"><span class="pre">n_features</span></code> parameter. Here we reuse the code above and add 1 new feature which we’ll name <code class="docutils literal notranslate"><span class="pre">c</span></code>, and then visualise the generated data in a 3D scatter plot. Notice again that the data clusters are linearly separable by a 2D plane.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -501,10 +543,10 @@ Type of y: &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x1495e7b80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x14d5e56a0&gt;
 </pre></div>
 </div>
-<img alt="_images/Using Scikitlearn_19_1.png" src="_images/Using Scikitlearn_19_1.png" />
+<img alt="../_images/Using Scikitlearn_19_1.png" src="../_images/Using Scikitlearn_19_1.png" />
 </div>
 </div>
 </div>
@@ -537,10 +579,10 @@ Type of y: &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x14969e9a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x14d6a2ee0&gt;
 </pre></div>
 </div>
-<img alt="_images/Using Scikitlearn_23_1.png" src="_images/Using Scikitlearn_23_1.png" />
+<img alt="../_images/Using Scikitlearn_23_1.png" src="../_images/Using Scikitlearn_23_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -564,10 +606,10 @@ Type of y: &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x149704c10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x14d716220&gt;
 </pre></div>
 </div>
-<img alt="_images/Using Scikitlearn_24_1.png" src="_images/Using Scikitlearn_24_1.png" />
+<img alt="../_images/Using Scikitlearn_24_1.png" src="../_images/Using Scikitlearn_24_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -591,10 +633,10 @@ Type of y: &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1497598e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x14d75ee80&gt;
 </pre></div>
 </div>
-<img alt="_images/Using Scikitlearn_25_1.png" src="_images/Using Scikitlearn_25_1.png" />
+<img alt="../_images/Using Scikitlearn_25_1.png" src="../_images/Using Scikitlearn_25_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -618,10 +660,10 @@ Type of y: &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1497c61f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x14d7c7760&gt;
 </pre></div>
 </div>
-<img alt="_images/Using Scikitlearn_26_1.png" src="_images/Using Scikitlearn_26_1.png" />
+<img alt="../_images/Using Scikitlearn_26_1.png" src="../_images/Using Scikitlearn_26_1.png" />
 </div>
 </div>
 </div>
@@ -641,7 +683,7 @@ Type of y: &lt;class &#39;numpy.ndarray&#39;&gt;
         },
         kernelOptions: {
             kernelName: "jupyter-books",
-            path: "./."
+            path: "./generating-data"
         },
         predefinedOutput: true
     }
@@ -659,6 +701,13 @@ Type of y: &lt;class &#39;numpy.ndarray&#39;&gt;
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Using the numpy library</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../reading-files/Pandas%20File%20Readers.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pandas File Readers</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
@@ -678,7 +727,7 @@ Type of y: &lt;class &#39;numpy.ndarray&#39;&gt;
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
